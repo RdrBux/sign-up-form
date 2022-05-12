@@ -1,21 +1,31 @@
+@font-face {
+  font-family: norse-bold;
+  src: url(./fonts/Norse-Bold.otf);
+}
+
+:root {
+  --color-green: #596d48;
+}
+
 html,
 body {
   margin: 0;
   height: 100%;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
+  font-family: norse-bold, sans-serif;
   color: white;
   font-size: 60px;
   margin: 0;
 }
 
 h2 {
-  margin: 0;
-  font-size: 26px;
+  font-size: 24px;
+  color: #292929;
 }
 
 p {
@@ -54,16 +64,31 @@ p {
 
 .logo-img {
   width: 70px;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+
+.credits {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+}
+
+.credits a {
+  color: white;
 }
 
 .right-side {
   width: 65%;
-  background-color: #f5f5f5;
+  background-color: #f9fafa;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0;
+  gap: 20px;
 }
 
 form {
@@ -77,7 +102,7 @@ form {
   flex-direction: column;
   flex-shrink: 0;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
 }
 
 .form-row {
@@ -91,12 +116,58 @@ form {
   width: 300px;
 }
 
+label {
+  color: #3d3d3d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+input {
+  height: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  font-size: 14px;
+  padding-left: 6px;
+}
+
+.error-pwd {
+  color: red;
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+.error input:invalid {
+  border-color: red;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: 2px 5px 7px rgb(204, 204, 204);
+  border: 1px solid blue;
+}
+
 button {
-  background-color: #596d48;
+  background-color: var(--color-green);
   color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 5%;
+  border-radius: 6px;
   padding: 15px 40px;
+  margin: 30px 0;
+  box-shadow: 2px 5px 7px rgb(204, 204, 204);
+}
+
+.log-in {
+  margin-left: 4vw;
+}
+
+.log-in a {
+  color: var(--color-green);
+  text-decoration: none;
+  .credits {
+    position: absolute;
+    bottom: 0;
+  }
 }
